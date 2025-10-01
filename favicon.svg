@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none">
+  <!-- Fundo circular -->
+  <circle cx="12" cy="12" r="11" fill="#218a8d" stroke="#1a686b" stroke-width="1"/>
+  
+  <!-- Círculo interno do relógio -->
+  <circle cx="12" cy="12" r="9" fill="#f5f5f5" stroke="#218a8d" stroke-width="1.5"/>
+  
+  <!-- Marcações das horas principais -->
+  <circle cx="12" cy="4" r="0.6" fill="#218a8d"/>
+  <circle cx="12" cy="20" r="0.6" fill="#218a8d"/>
+  <circle cx="20" cy="12" r="0.6" fill="#218a8d"/>
+  <circle cx="4" cy="12" r="0.6" fill="#218a8d"/>
+  
+  <!-- Marcações menores -->
+  <circle cx="17.5" cy="6.5" r="0.3" fill="#32b8c6"/>
+  <circle cx="17.5" cy="17.5" r="0.3" fill="#32b8c6"/>
+  <circle cx="6.5" cy="6.5" r="0.3" fill="#32b8c6"/>
+  <circle cx="6.5" cy="17.5" r="0.3" fill="#32b8c6"/>
+  
+  <!-- Ponteiros do relógio (indicando 10:10 - posição clássica) -->
+  <line x1="12" y1="12" x2="9" y2="8" stroke="#218a8d" stroke-width="2" stroke-linecap="round"/>
+  <line x1="12" y1="12" x2="15" y2="8" stroke="#218a8d" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Centro do relógio -->
+  <circle cx="12" cy="12" r="1.2" fill="#218a8d"/>
+  <circle cx="12" cy="12" r="0.6" fill="#f5f5f5"/>
+  
+  <!-- Botão do cronômetro no topo -->
+  <rect x="11" y="1" width="2" height="2" fill="#32b8c6" rx="1"/>
+</svg>

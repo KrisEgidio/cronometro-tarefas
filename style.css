@@ -820,6 +820,14 @@ select.form-control {
     margin: var(--space-32) 0;
     letter-spacing: 0.05em;
     line-height: 1;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .timer-controls {
@@ -833,6 +841,8 @@ select.form-control {
     .timer-display {
         font-size: 2.5rem;
         margin: var(--space-24) 0;
+        min-height: 2.5rem;
+        font-size: clamp(1.5rem, 8vw, 2.5rem); /* Responsivo baseado na largura da tela */
     }
     
     .timer-controls {
@@ -913,6 +923,30 @@ select.form-control {
     color: var(--color-success);
 }
 
+.task-item-remove {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: var(--space-4);
+    border-radius: var(--radius-sm);
+    transition: all var(--duration-fast) var(--ease-standard);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: var(--space-8);
+}
+
+.task-item-remove:hover {
+    color: var(--color-error);
+    background-color: rgba(var(--color-error-rgb), 0.1);
+}
+
+.task-item-remove:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
 @media (max-width: 640px) {
     .task-item {
         flex-direction: column;
@@ -922,6 +956,12 @@ select.form-control {
     .task-item-details {
         flex-direction: column;
         gap: var(--space-8);
+    }
+    
+    .task-item-remove {
+        align-self: flex-end;
+        margin-left: 0;
+        margin-top: var(--space-8);
     }
     
     .history-header {
@@ -1033,4 +1073,41 @@ select.form-control {
 
 .form-control:focus {
     transform: translateY(-1px);
+}
+
+/* Notificação do cronômetro */
+.timer-notification {
+    position: fixed;
+    top: var(--space-20);
+    right: var(--space-20);
+    background-color: var(--color-success);
+    color: var(--color-btn-primary-text);
+    padding: var(--space-12) var(--space-16);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-lg);
+    z-index: 1001;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    max-width: 300px;
+    animation: slideInFromRight 0.3s var(--ease-standard);
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .timer-notification {
+        top: var(--space-16);
+        right: var(--space-16);
+        left: var(--space-16);
+        max-width: none;
+    }
 }
