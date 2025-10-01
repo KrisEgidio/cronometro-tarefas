@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Cronômetro de Tarefas</h1>
+            <p class="subtitle">Organize e monitore o tempo das suas atividades</p>
+        </header>
+
+        <main class="main">
+            <!-- Seção de Nova Tarefa -->
+            <section class="task-section">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label for="task-input" class="form-label">Nova Tarefa</label>
+                            <div class="task-input-group">
+                                <input 
+                                    type="text" 
+                                    id="task-input" 
+                                    class="form-control task-input" 
+                                    placeholder="Digite o nome da tarefa..."
+                                    maxlength="100"
+                                >
+                                <button id="add-task-btn" class="btn btn--primary">Adicionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção do Cronômetro -->
+            <section class="timer-section">
+                <div class="card">
+                    <div class="card__body">
+                        <div class="current-task" id="current-task">
+                            <span class="task-label">Tarefa atual:</span>
+                            <span class="task-name" id="current-task-name">Nenhuma tarefa selecionada</span>
+                        </div>
+                        
+                        <div class="timer-display" id="timer-display">00:00:00</div>
+                        
+                        <div class="timer-controls">
+                            <button id="start-btn" class="btn btn--primary btn--lg" disabled>Iniciar</button>
+                            <button id="pause-btn" class="btn btn--secondary btn--lg hidden">Pausar</button>
+                            <button id="stop-btn" class="btn btn--outline btn--lg hidden">Parar e Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção do Histórico -->
+            <section class="history-section">
+                <div class="card">
+                    <div class="card__header">
+                        <div class="history-header">
+                            <h3>Histórico de Tarefas</h3>
+                            <button id="clear-history-btn" class="btn btn--outline btn--sm">Limpar Histórico</button>
+                        </div>
+                    </div>
+                    <div class="card__body">
+                        <div id="task-list" class="task-list">
+                            <div class="empty-state">
+                                <p>Nenhuma tarefa concluída ainda.</p>
+                                <p class="empty-state-subtitle">Complete uma tarefa para vê-la aqui!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Cronômetro de Tarefas - Gerencie seu tempo de forma eficiente</p>
+        </footer>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirm-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <h3>Confirmar ação</h3>
+            <p id="confirm-message">Tem certeza que deseja limpar todo o histórico?</p>
+            <div class="modal-actions">
+                <button id="confirm-yes" class="btn btn--primary">Sim</button>
+                <button id="confirm-no" class="btn btn--outline">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
